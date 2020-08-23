@@ -11,6 +11,6 @@ data class Result(
     val poster_path: String,
     val release_Date: String,
     val vote_average: Double,
-    val vote_count: Int
-  //  val logo_path: String
+    val vote_count: Int,
+    val backdrop_path: String
 )

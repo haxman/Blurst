@@ -10,9 +10,20 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:id="@+id/movie_logo"
+            android:contentDescription="Movie Logo" />
+
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+
 
             <ImageView
                 android:layout_width="match_parent"

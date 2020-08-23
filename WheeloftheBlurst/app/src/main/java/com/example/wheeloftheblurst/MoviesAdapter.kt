@@ -1,6 +1,6 @@
 package com.example.wheeloftheblurst
 
-import android.util.Log
+//import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,6 +25,7 @@ class MoviesAdapter(val movies: List<Result>): RecyclerView.Adapter<MoviesViewHo
 }
 
 class MoviesViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
+    private val logo:ImageView = itemView.findViewById(R.id.movie_logo)
     private val photo:ImageView = itemView.findViewById(R.id.movie_photo)
     private val title:TextView = itemView.findViewById(R.id.movie_title)
     private val overview:TextView = itemView.findViewById(R.id.movie_overview)
@@ -32,10 +33,11 @@ class MoviesViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
 
     fun bind(movie: Result) {
         Glide.with(itemView.context).load("https://image.tmdb.org/t/p/w500${movie.poster_path}").into(photo)
-        Log.i("IMAGE", "Poster path is: ${movie.poster_path}")
+        Glide.with(itemView.context).load("https://image.tmdb.org/t/p/original${movie.backdrop_path}").into(logo)
+       // Log.i("IMAGE", "Poster path is: ${movie.backdrop_path}")
         //Glide.with(itemView.context).load("https://image.tmdb.org/t/p/w500/eAUzmhP54bE1vPXaY7FbuZREJlR.jpg").into(photo)
         title.text = "Title: "+movie.title
-        Log.i("IMAGE", "Title path is: ${movie.title}")
+      //  Log.i("IMAGE", "Title path is: ${movie.title}")
         overview.text = movie.overview
         rating.text = "Rating : "+movie.vote_average.toString()
     }
